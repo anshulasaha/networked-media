@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "MyFont1";
+  src: url("./MyFont1.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+body {
+  background-color: #e28743;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: "MyFont1", sans-serif;
+  font-size: clamp(3rem, 12vmax, 12rem);
+  text-align: center;
+  letter-spacing: -0.03em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 0.875;
+  hyphens: auto;
+}
+
+h1 span {
+  animation: scatter 600ms ease both;
+}
+
+h1 span {
+  display: inline-block;
+  transform: translate(0, 0) rotate(0deg);
+  will-change: transform;
+}
+
+@keyframes scatter {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(var(--rot, 0deg));
+  }
+}
+
+@supports (animation-timeline: view()) {
+  h1 span {
+    animation: scatter 1s linear both;
+    animation-timeline: view();
+
+    animation-range: entry 0% cover 30%;
+  }
+}
+
+h1 span:nth-of-type(1) {
+  --dx: -20px;
+  --dy: -10px;
+  --rot: -5deg;
+}
+h1 span:nth-of-type(2) {
+  --dx: 15px;
+  --dy: -15px;
+  --rot: 7deg;
+}
+h1 span:nth-of-type(3) {
+  --dx: -25px;
+  --dy: 20px;
+  --rot: -10deg;
+}
+h1 span:nth-of-type(4) {
+  --dx: 30px;
+  --dy: 5px;
+  --rot: 6deg;
+}
+h1 span:nth-of-type(5) {
+  --dx: -10px;
+  --dy: 25px;
+  --rot: -4deg;
+}
+
+h1 span:nth-of-type(6) {
+  --dx: 20px;
+  --dy: -8px;
+  --rot: 5deg;
+}
+h1 span:nth-of-type(7) {
+  --dx: -15px;
+  --dy: 18px;
+  --rot: -6deg;
+}
+
+h1 span:nth-of-type(8) {
+  --dx: 25px;
+  --dy: -12px;
+  --rot: 8deg;
+}
+h1 span:nth-of-type(9) {
+  --dx: -30px;
+  --dy: 15px;
+  --rot: -7deg;
+}
+h1 span:nth-of-type(10) {
+  --dx: 10px;
+  --dy: -20px;
+  --rot: 4deg;
+}
+h1 span:nth-of-type(11) {
+  --dx: -18px;
+  --dy: 22px;
+  --rot: -6deg;
+}
+h1 span:nth-of-type(12) {
+  --dx: 28px;
+  --dy: -14px;
+  --rot: 9deg;
+}
+h1 span:nth-of-type(13) {
+  --dx: -12px;
+  --dy: 12px;
+  --rot: -5deg;
+}
+
+h1 span:nth-of-type(14) {
+  --dx: 20px;
+  --dy: 10px;
+  --rot: 7deg;
+}
+h1 span:nth-of-type(15) {
+  --dx: -25px;
+  --dy: -18px;
+  --rot: -8deg;
+}
+h1 span:nth-of-type(16) {
+  --dx: 15px;
+  --dy: 18px;
+  --rot: 6deg;
+}
+h1 span:nth-of-type(17) {
+  --dx: -20px;
+  --dy: -10px;
+  --rot: -5deg;
+}
+h1 span:nth-of-type(18) {
+  --dx: 30px;
+  --dy: 8px;
+  --rot: 8deg;
+}
+h1 span:nth-of-type(19) {
+  --dx: -15px;
+  --dy: 20px;
+  --rot: -7deg;
+}
+
+.box {
+  display: grid;
+  width: 1200px;
+  grid-template-columns: 120px 120px 120px;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 1200px;
+  gap: 2rem;
+  width: max-content;
+  margin-inline: auto;
+  justify-items: center;
+}
+
+.box :first-child {
+  align-self: center;
+}
