@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title><%= name %></title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1 class="Borough"><span><%= name %></span></h1>
+    <p><a href="/">Submit another</a> · <a href="/collection">Collection</a></p>
+
+    <% if (list.length === 0) { %>
+    <p><em>No entries yet.</em></p>
+    <% } %> <% list.forEach(e => { %>
+    <div class="card <%= e.colorClass %>">
+      <div class="card-name"><%= e.guest || 'Anon' %></div>
+      <div class="card-message">Description : <br /><%= e.message %></div>
+      <div class="card-meta">
+        LOCATION: <%= e.location || '—' %> · <%= e.time %> · <%= e.sense %>
+      </div>
+    </div>
+    <% }) %>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "HeadingFont";
+  src: url("/assets/HeadingFont.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: "HeadingFont", sans-serif;
+  font-size: clamp(3rem, 12vmax, 12rem);
+  text-align: center;
+  letter-spacing: -0.03em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 0.875;
+  hyphens: auto;
+}
+
+.hero h1 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+.desForm {
+  font-family: "HeadingFont", sans-serif;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  padding: 4rem;
+}
+
+.copy {
+  max-width: 48ch;
+  line-height: 1.6;
+}
+.copy p {
+  margin: 0 0 2rem;
+}
+
+/* Chips for colored words */
+.chip {
+  padding: 0.05rem 0.35rem;
+  border-radius: 0.35rem;
+  white-space: nowrap;
+}
+.chip-sight {
+  background: #48a0de;
+}
+.chip-scent {
+  background: #c0ba49;
+}
+.chip-taste {
+  background: #e75dbd;
+}
+.chip-sound {
+  background: #e78408;
+}
+.chip-unnamed {
+  background: #d32b2b;
+}
+
+.submitInfo {
+  max-width: 48ch;
+  line-height: 1.6;
+}
+.submitInfo {
+  margin: 0 0 2rem;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.imageGrid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+marquee {
+  background-color: #232323;
+  animation: rainbow 5s infinite linear;
+  padding-block: 0.375rem;
+  font: "HeadingFont";
+}
+
+.head {
+  font-family: "HeadingFont", sans-serif;
+  color: #ffffff;
+}
+
+.Borough {
+  font-family: "HeadingFont", sans-serif;
+  font-size: clamp(3rem, 12vmax, 12rem);
+  text-align: left;
+  letter-spacing: -0.03em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 0.875;
+  hyphens: auto;
+}
+
+.float-layer {
+  position: relative;
+  height: 40vh;
+  margin: 1rem 0 2rem;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floaty {
+  position: absolute;
+  width: clamp(80px, 16vw, 220px);
+  pointer-events: none;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+  animation-name: drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: var(--dur, 18s);
+  animation-delay: var(--delay, 0s);
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+  from {
+    transform: translate(var(--x1, 0px), var(--y1, 0px)) rotate(var(--r1, 0deg)) scale(var(--s1, 1));
+  }
+  to {
+    transform: translate(var(--x2, 40px), var(--y2, -40px)) rotate(var(--r2, 6deg))
+      scale(var(--s2, 1.03));
+  }
+}
+
+.card {
+  color: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  margin: 24px auto;
+  max-width: 720px;
+  text-align: center;
+}
+.card-name {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.card-message {
+  white-space: pre-wrap;
+  margin-bottom: 8px;
+}
+.card-meta {
+  opacity: 0.9;
+}

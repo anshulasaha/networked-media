@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EYES,EARS,NOSE,MOUTH</title>
+    <link href="style.css" rel="stylesheet" />
+    <script defer src="main.js"></script>
+  </head>
+
+  <section class="hero">
+    <header class="head">
+      <marquee> of New York City</marquee>
+    </header>
+    <div>
+      <h1 class="MainTitle">
+        <span>EYES,<br />EARS,<br />NOSE,<br />MOUTH</span>
+      </h1>
+    </div>
+  </section>
+
+  <div class="float-layer">
+    <img class="floaty" src="/eye.png" alt="eyes" />
+    <img class="floaty" src="/eye2.png" alt="eyes2" />
+    <img class="floaty" src="/nose.png" alt="nose" />
+    <img class="floaty" src="/mouth.png" alt="mouth" />
+    <img class="floaty" src="/ears.png" alt="ears" />
+  </div>
+
+  <section class="desForm">
+    <div class="copy">
+      <h3>
+        <p>
+          <br />
+          <br />This is a space to capture a moment when you felt something deeply—so much that you
+          wanted to document it.
+        </p>
+
+        <p>
+          It can be anything: a picture, a description of something you heard, smelled, or tasted,
+          and maybe the general location or name of the neighborhood.
+        </p>
+
+        <p>
+          Fill in your moment here, and it will become part of a collective journal—a map of how we,
+          as a community, feel.
+        </p>
+
+        <p>
+          We will be using a color code to represent what you felt:
+          <span class="chip chip-sight">a sight</span>,
+          <span class="chip chip-scent">a scent</span>,
+          <span class="chip chip-taste">a taste</span>,
+          <span class="chip chip-sound">a sound</span>, or
+          <span class="chip chip-unnamed">a feeling you cant quite name</span>. (Designers
+          privilege: I assigned the colors.)
+        </p>
+
+        <p>
+          You can pick a borough, or add a location if. Lets see what our shared emotional landscape
+          looks like.
+        </p>
+      </h3>
+    </div>
+
+    <div class="submitInfo">
+      <h3>
+        <br />
+        <br />
+        <form action="/submit" method="GET">
+          <label>
+            Name / Pseudonym
+            <input type="text" name="guest" placeholder="optional" />
+          </label>
+          <br /><br />
+
+          <label>
+            Describe your moment
+            <br />
+            <textarea
+              name="message"
+              rows="5"
+              cols="50"
+              placeholder="what happened / what did you feel?"
+            ></textarea>
+          </label>
+          <br /><br />
+
+          <label>
+            Type of sensation
+            <select name="sense" required>
+              <option value="" disabled selected>choose one</option>
+              <option value="sight">Sight</option>
+              <option value="scent">Scent</option>
+              <option value="taste">Taste</option>
+              <option value="sound">Sound</option>
+              <option value="unnamed">Other</option>
+            </select>
+          </label>
+          <br /><br />
+
+          <label>
+            Borough
+            <select name="borough" required>
+              <option value="" disabled selected>choose one</option>
+              <option value="Manhattan">Manhattan</option>
+              <option value="Brooklyn">Brooklyn</option>
+              <option value="Queens">Queens</option>
+              <option value="Bronx">Bronx</option>
+              <option value="Staten Island">Staten Island</option>
+              <option value="Other">Outside NYC / Other</option>
+            </select>
+          </label>
+          <br /><br />
+
+          <label>
+            Location (optional)
+            <input type="text" name="location" placeholder="neighborhood / landmark" />
+          </label>
+          <br /><br />
+
+          <input type="submit" value="Add to journal" />
+        </form>
+
+        <br />
+        <br />
+        <a href="/collection"><p>View All</p></a>
+      </h3>
+    </div>
+  </section>
+</html>
