@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Project 4</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form action="/post" method="POST" enctype="multipart/form-data">
+      <input name="dasEssen" type="text" placeholder="das Essen" required />
+      <input name="dieStandort" type="text" placeholder="der Standort" required />
+      <input type="submit" value="add to database" />
+    </form>
+
+    <div class="posts">
+      <% for(let post of posts){ %>
+      <span><%= post.date %></span>
+      <p><strong>Essen:</strong> <%= post.dasEssen || post.text %></p>
+      <p><strong>Standort:</strong> <%= post.dieStandort || '—' %></p>
+      <% } %>
+    </div>
+  </body>
+</html>
